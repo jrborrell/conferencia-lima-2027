@@ -2,38 +2,8 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<style>
-  /* Reseteja tot el que el tema WP pugui injectar */
-  #conf-iframe-wrapper * { all: unset; }
-  #conf-iframe-wrapper {
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border: none;
-  }
-  #conf-iframe {
-    width: 100%;
-    border: none;
-    display: block;
-    min-height: 900px;
-  }
-</style>
-</head>
-<body>
-
-<div id="conf-iframe-wrapper">
-  <iframe id="conf-iframe" scrolling="no" src="about:blank"></iframe>
-</div>
-
-<script>
-(function() {
-  var content = `<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jornadas de Servicios Públicos y Regulación 2027</title>
+<title>Jornadas de Servicios Públicos y Regulación 2027 – Lima</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -48,128 +18,728 @@
     --red-peru: #C8102E;
     --border: #E2DAD0;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); font-weight: 300; }
 
-  header { background: var(--ink); position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--gold); }
-  nav { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; flex-wrap: wrap; }
-  .nav-logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1rem; font-weight: 600; letter-spacing: 0.05em; text-decoration: none; }
-  nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0; }
-  nav ul li a { display: block; padding: 0 0.75rem; color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; line-height: 60px; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-weight: 300;
+  }
+
+  /* ── HEADER / NAV ── */
+  header {
+    background: var(--ink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0 1rem;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    line-height: 60px;
+  }
+
   nav ul li a:hover { color: var(--gold); }
 
-  .hero { background: var(--ink); color: white; padding: 80px 2rem 100px; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(184,150,62,0.08) 39px, rgba(184,150,62,0.08) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(184,150,62,0.08) 39px, rgba(184,150,62,0.08) 40px); }
-  .hero-content { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
-  .hero-label { display: inline-block; background: var(--red-peru); color: white; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; margin-bottom: 28px; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.15; font-weight: 600; margin-bottom: 16px; max-width: 700px; }
-  .hero h1 em { font-style: italic; color: var(--gold); }
-  .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.65); margin-bottom: 48px; max-width: 560px; line-height: 1.7; }
-  .hero-meta { display: flex; gap: 40px; flex-wrap: wrap; }
-  .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
-  .hero-meta-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
-  .hero-meta-value { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: white; }
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: white;
+    padding: 80px 2rem 100px;
+    position: relative;
+    overflow: hidden;
+  }
 
-  .dates-banner { background: var(--white); border-bottom: 1px solid var(--border); padding: 32px 2rem; }
-  .dates-banner h2 { font-family: 'Playfair Display', serif; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); text-align: center; margin-bottom: 28px; font-weight: 400; }
-  .dates-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--border); }
-  .date-item { background: var(--white); padding: 20px 16px; text-align: center; }
-  .date-icon { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--gold); margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 0.85rem; font-weight: 600; }
-  .date-label { font-size: 0.75rem; color: var(--ink-soft); line-height: 1.4; margin-bottom: 8px; }
-  .date-value { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--ink); }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(184,150,62,0.08) 39px,
+        rgba(184,150,62,0.08) 40px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 39px,
+        rgba(184,150,62,0.08) 39px,
+        rgba(184,150,62,0.08) 40px
+      );
+  }
 
-  .tabs-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-  .tabs-nav { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--border); margin-top: 40px; }
-  .tab-btn { padding: 12px 16px; border: none; background: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.73rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
-  .tab-btn.active { color: var(--gold-dark); border-bottom-color: var(--gold); }
+  .hero-content {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-label {
+    display: inline-block;
+    background: var(--red-peru);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.15;
+    font-weight: 600;
+    margin-bottom: 16px;
+    max-width: 700px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 48px;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-meta-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .hero-meta-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: white;
+  }
+
+  /* ── DATES BANNER ── */
+  .dates-banner {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 2rem;
+  }
+
+  .dates-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+
+  .dates-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .date-item {
+    background: var(--white);
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .date-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .date-label {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .date-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  /* ── TABS ── */
+  .tabs-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--border);
+    margin-top: 40px;
+    gap: 0;
+  }
+
+  .tab-btn {
+    padding: 14px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+  }
+
+  .tab-btn.active {
+    color: var(--gold-dark);
+    border-bottom-color: var(--gold);
+  }
+
   .tab-btn:hover { color: var(--ink); }
+
   .tab-content { display: none; padding: 48px 0 80px; }
   .tab-content.active { display: block; }
 
-  .section-title { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 600; color: var(--ink); margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
-  .lead-text { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); max-width: 740px; margin-bottom: 32px; }
+  /* ── SECTIONS ── */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
 
-  .welcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .lead-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+    max-width: 740px;
+    margin-bottom: 32px;
+  }
+
+  /* ── HOME TAB ── */
+  .welcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
   @media (max-width: 720px) { .welcome-grid { grid-template-columns: 1fr; } }
 
-  .speakers-box { background: var(--white); border: 1px solid var(--border); padding: 28px; }
-  .speakers-box h3 { font-size: 0.78rem; letter-spacing: 0.1em; margin-bottom: 20px; color: var(--ink); text-transform: uppercase; font-weight: 600; font-family: 'DM Sans', sans-serif; }
-  .speaker-item { padding: 14px 0; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 4px; }
+  .speakers-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 28px;
+  }
+
+  .speakers-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+    color: var(--ink);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  .speaker-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
   .speaker-item:last-child { border-bottom: none; }
-  .speaker-name { font-weight: 500; font-size: 0.95rem; color: var(--ink); }
-  .speaker-role { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.4; }
-  .panel-badge { display: inline-block; background: var(--gold-light); color: var(--gold-dark); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; margin-bottom: 6px; }
 
-  .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin: 32px 0; }
-  .topic-card { background: var(--white); border: 1px solid var(--border); padding: 20px; border-left: 3px solid var(--gold); }
-  .topic-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 8px; color: var(--ink); }
-  .topic-card p { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6; }
+  .speaker-name {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
 
-  .submit-box { background: var(--ink); color: white; padding: 36px 40px; margin-top: 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-  .submit-box h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 6px; }
-  .submit-box p { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
-  .btn-gold { background: var(--gold); color: var(--ink); border: none; padding: 13px 28px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; white-space: nowrap; transition: background 0.2s; }
+  .speaker-role {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  .panel-badge {
+    display: inline-block;
+    background: var(--gold-light);
+    color: var(--gold-dark);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    margin-bottom: 6px;
+  }
+
+  /* ── CALL FOR EXPERIENCES ── */
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .topic-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .topic-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .topic-card p {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .submit-box {
+    background: var(--ink);
+    color: white;
+    padding: 36px 40px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .submit-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+  }
+
+  .submit-box p {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.9rem;
+  }
+
+  .btn-gold {
+    background: var(--gold);
+    color: var(--ink);
+    border: none;
+    padding: 13px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
   .btn-gold:hover { background: var(--gold-dark); color: white; }
 
-  .programme-day { margin-bottom: 48px; }
-  .day-header { background: var(--ink); color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; padding: 12px 20px; letter-spacing: 0.05em; margin-bottom: 2px; }
-  .schedule-table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--border); }
+  /* ── PROGRAMME ── */
+  .programme-day {
+    margin-bottom: 48px;
+  }
+
+  .day-header {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border: 1px solid var(--border);
+  }
+
   .schedule-table tr { border-bottom: 1px solid var(--border); }
   .schedule-table tr:last-child { border-bottom: none; }
-  .schedule-table td { padding: 14px 18px; font-size: 0.9rem; vertical-align: top; }
-  .schedule-table td:first-child { color: var(--ink-soft); white-space: nowrap; width: 150px; font-size: 0.82rem; font-weight: 500; border-right: 1px solid var(--border); }
+
+  .schedule-table td {
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    vertical-align: top;
+  }
+
+  .schedule-table td:first-child {
+    color: var(--ink-soft);
+    white-space: nowrap;
+    width: 150px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border-right: 1px solid var(--border);
+  }
+
   .session-highlight td { background: #FDF8EF; }
   .session-break td { background: var(--cream); color: var(--ink-soft); font-size: 0.85rem; }
-  .session-title { font-weight: 500; color: var(--ink); margin-bottom: 4px; }
-  .session-detail { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5; }
 
+  .session-title {
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .session-detail {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* ── COMMITTEES ── */
   .committee-section { margin-bottom: 48px; }
-  .committee-section h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
-  .members-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
-  .member-card { background: var(--white); border: 1px solid var(--border); padding: 14px 16px; }
-  .member-name { font-weight: 500; font-size: 0.9rem; color: var(--ink); margin-bottom: 3px; }
-  .member-inst { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.4; }
 
-  .fees-table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--border); margin: 24px 0 40px; }
-  .fees-table th { background: var(--ink); color: var(--gold); padding: 12px 16px; text-align: left; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
-  .fees-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .committee-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.03em;
+  }
+
+  .members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .member-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+  }
+
+  .member-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .member-inst {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  /* ── REGISTRATION ── */
+  .fees-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border: 1px solid var(--border);
+    margin: 24px 0 40px;
+  }
+
+  .fees-table th {
+    background: var(--ink);
+    color: var(--gold);
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .fees-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+
   .fees-table tr:last-child td { border-bottom: none; }
-  .fees-table .section-row td { background: var(--cream); font-weight: 500; font-size: 0.82rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.07em; }
-  .price { font-family: 'Playfair Display', serif; font-weight: 600; color: var(--gold-dark); }
+  .fees-table .section-row td {
+    background: var(--cream);
+    font-weight: 500;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
 
-  .info-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .price {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--gold-dark);
+  }
+
+  /* ── ACCOMMODATION / LIMA ── */
+  .info-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
   @media (max-width: 720px) { .info-columns { grid-template-columns: 1fr; } }
-  .info-block { background: var(--white); border: 1px solid var(--border); padding: 24px; }
-  .info-block h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--ink); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
-  .info-block ul { list-style: none; font-size: 0.88rem; color: var(--ink-mid); line-height: 2; }
-  .info-block ul li::before { content: '→ '; color: var(--gold); }
 
-  .prize-box { background: var(--white); border: 1px solid var(--border); padding: 36px; border-top: 3px solid var(--gold); max-width: 700px; margin-bottom: 40px; }
+  .info-block {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 24px;
+  }
 
-  .notice { background: var(--gold-light); border: 1px solid var(--gold); border-left: 3px solid var(--gold); padding: 14px 18px; font-size: 0.88rem; color: var(--gold-dark); margin-bottom: 24px; line-height: 1.6; }
+  .info-block h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
 
-  .contact-form { max-width: 560px; }
-  .form-group { margin-bottom: 20px; }
-  .form-group label { display: block; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
-  .form-group input, .form-group textarea, .form-group select { width: 100%; border: 1px solid var(--border); background: var(--white); padding: 11px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--ink); outline: none; transition: border-color 0.2s; }
-  .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .info-block ul {
+    list-style: none;
+    font-size: 0.88rem;
+    color: var(--ink-mid);
+    line-height: 2;
+  }
+
+  .info-block ul li::before {
+    content: '→ ';
+    color: var(--gold);
+  }
+
+  /* ── PRIZE ── */
+  .prize-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 36px;
+    border-top: 3px solid var(--gold);
+    max-width: 700px;
+    margin-bottom: 40px;
+  }
+
+  /* ── CONTACT ── */
+  .contact-form {
+    max-width: 560px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: var(--white);
+    padding: 11px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+
   .form-group textarea { height: 120px; resize: vertical; }
 
-  footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 48px 2rem 32px; margin-top: 80px; }
-  .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    padding: 48px 2rem 32px;
+    margin-top: 80px;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 24px;
+  }
+
   @media (max-width: 720px) { .footer-inner { grid-template-columns: 1fr; } }
-  .footer-brand { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.1rem; margin-bottom: 12px; }
-  .footer-desc { font-size: 0.82rem; line-height: 1.7; }
-  .footer-col h4 { color: white; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
-  .footer-col ul { list-style: none; font-size: 0.82rem; line-height: 2; }
-  .footer-col ul li a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; cursor: pointer; }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .footer-desc {
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+
+  .footer-col h4 {
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    font-size: 0.82rem;
+    line-height: 2;
+  }
+
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
   .footer-col ul li a:hover { color: var(--gold); }
-  .footer-bottom { max-width: 1100px; margin: 0 auto; font-size: 0.78rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  .venue-map { width: 100%; height: 280px; background: #E0D8CE; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--ink-soft); font-size: 0.9rem; margin: 24px 0; }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 0.78rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ── NOTICE ── */
+  .notice {
+    background: var(--gold-light);
+    border: 1px solid var(--gold);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    font-size: 0.88rem;
+    color: var(--gold-dark);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .venue-map {
+    width: 100%;
+    height: 280px;
+    background: #E0D8CE;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin: 24px 0;
+  }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <header>
   <nav>
     <a href="#" class="nav-logo">JSP·REG 2027</a>
@@ -188,31 +758,67 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-label">I Jornadas Internacionales</div>
     <h1>Servicios Públicos, <em>Regulación</em> y Competencia en Servicios Esenciales</h1>
     <p class="hero-sub">Un foro para profesionales y gestores que comparten experiencias de mejora en la prestación de servicios públicos y en las políticas de regulación y competencia.</p>
     <div class="hero-meta">
-      <div class="hero-meta-item"><span class="hero-meta-label">Fechas</span><span class="hero-meta-value">15–16 de julio, 2027</span></div>
-      <div class="hero-meta-item"><span class="hero-meta-label">Sede</span><span class="hero-meta-value">Lima, Perú</span></div>
-      <div class="hero-meta-item"><span class="hero-meta-label">Modalidad</span><span class="hero-meta-value">Presencial + online</span></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Fechas</span>
+        <span class="hero-meta-value">15–16 de julio, 2027</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Sede</span>
+        <span class="hero-meta-value">Lima, Perú</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Modalidad</span>
+        <span class="hero-meta-value">Presencial + online</span>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- DATES BANNER -->
 <section class="dates-banner">
   <h2>Fechas clave</h2>
   <div class="dates-grid">
-    <div class="date-item"><div class="date-icon">1</div><div class="date-label">Apertura de la convocatoria</div><div class="date-value">1 feb. 2027</div></div>
-    <div class="date-item"><div class="date-icon">2</div><div class="date-label">Plazo para envío de resúmenes</div><div class="date-value">30 abr. 2027</div></div>
-    <div class="date-item"><div class="date-icon">3</div><div class="date-label">Notificación de aceptación</div><div class="date-value">31 may. 2027</div></div>
-    <div class="date-item"><div class="date-icon">4</div><div class="date-label">Inscripción temprana</div><div class="date-value">15 jun. 2027</div></div>
-    <div class="date-item"><div class="date-icon">5</div><div class="date-label">Inscripción de presentadores</div><div class="date-value">25 jun. 2027</div></div>
-    <div class="date-item"><div class="date-icon">6</div><div class="date-label">Inscripción altres participants</div><div class="date-value">5 jul. 2027</div></div>
+    <div class="date-item">
+      <div class="date-icon">1</div>
+      <div class="date-label">Apertura de la convocatoria</div>
+      <div class="date-value">1 feb. 2027</div>
+    </div>
+    <div class="date-item">
+      <div class="date-icon">2</div>
+      <div class="date-label">Plazo para envío de resúmenes</div>
+      <div class="date-value">30 abr. 2027</div>
+    </div>
+    <div class="date-item">
+      <div class="date-icon">3</div>
+      <div class="date-label">Notificación de aceptación</div>
+      <div class="date-value">31 may. 2027</div>
+    </div>
+    <div class="date-item">
+      <div class="date-icon">4</div>
+      <div class="date-label">Inscripción temprana (tarifa reducida)</div>
+      <div class="date-value">15 jun. 2027</div>
+    </div>
+    <div class="date-item">
+      <div class="date-icon">5</div>
+      <div class="date-label">Inscripción de presentadores</div>
+      <div class="date-value">25 jun. 2027</div>
+    </div>
+    <div class="date-item">
+      <div class="date-icon">6</div>
+      <div class="date-label">Inscripción resto de participantes</div>
+      <div class="date-value">5 jul. 2027</div>
+    </div>
   </div>
 </section>
 
+<!-- MAIN CONTENT / TABS -->
 <div class="tabs-wrapper">
   <nav class="tabs-nav">
     <button class="tab-btn active" onclick="showTab('home')">Inicio</button>
@@ -232,21 +838,46 @@
     <div class="welcome-grid">
       <div>
         <h2 class="section-title">Bienvenida</h2>
-        <p class="lead-text">El <strong>Máster en Economía, Regulación y Competencia en los Servicios Públicos (ERCSP)</strong> de la Universitat de Barcelona tiene el honor de convocar la <strong>I Jornadas Internacionales sobre Servicios Públicos, Regulación y Competencia en Servicios Esenciales</strong>, que se celebrarán en Lima, Perú, los días 15 y 16 de julio de 2027.</p>
-        <p class="lead-text">A diferencia de los congresos académicos convencionales, estas Jornadas están dirigidas a <strong>profesionales en activo</strong>: directivos y técnicos de organismos reguladores, gestores de servicios públicos, funcionarios de instituciones de competencia, responsables de contratación y concesiones, y consultores de política pública.</p>
-        <p class="lead-text">El eje del encuentro es el intercambio de <em>experiencias reales y resultados verificables</em> de mejora en la prestación de servicios esenciales y en las políticas de regulación y competencia. Los sectores cubiertos incluyen energía, agua y saneamiento, transporte, telecomunicaciones, salud y servicios sociales.</p>
+        <p class="lead-text">
+          La <strong>[Institución organizadora]</strong> tiene el honor de convocar la <strong>I Jornadas Internacionales sobre Servicios Públicos, Regulación y Competencia en Servicios Esenciales</strong>, que se celebrarán en Lima, Perú, los días 15 y 16 de julio de 2027.
+        </p>
+        <p class="lead-text">
+          A diferencia de los congresos académicos convencionales, estas Jornadas están dirigidas a <strong>profesionales en activo</strong>: directivos y técnicos de organismos reguladores, gestores de servicios públicos, funcionarios de instituciones de competencia, responsables de contratación y concesiones, y consultores de política pública. El eje del encuentro es el intercambio de <em>experiencias reales y resultados verificables</em> de mejora en la prestación de servicios esenciales y en las políticas de regulación y competencia.
+        </p>
+        <p class="lead-text">
+          Los sectores cubiertos incluyen energía, agua y saneamiento, transporte, telecomunicaciones, salud y servicios sociales.
+        </p>
       </div>
+
       <div>
         <div class="speakers-box">
           <h3>Sesiones plenarias</h3>
+
           <div class="panel-badge">Conferencia magistral</div>
-          <div class="speaker-item"><div class="speaker-name">[Por confirmar]</div><div class="speaker-role">Experto/a internacional en regulación de servicios públicos</div></div>
+          <div class="speaker-item">
+            <div class="speaker-name">[Por confirmar]</div>
+            <div class="speaker-role">Experto/a internacional en regulación de servicios públicos</div>
+          </div>
+
           <div class="panel-badge">Mesa redonda — Regulación en América Latina</div>
-          <div class="speaker-item"><div class="speaker-name">[Por confirmar]</div><div class="speaker-role">Organismo regulador de energía</div></div>
-          <div class="speaker-item"><div class="speaker-name">[Por confirmar]</div><div class="speaker-role">Agencia de competencia</div></div>
-          <div class="speaker-item"><div class="speaker-name">[Por confirmar]</div><div class="speaker-role">Operador de infraestructura pública</div></div>
+          <div class="speaker-item">
+            <div class="speaker-name">[Por confirmar]</div>
+            <div class="speaker-role">Organismo regulador de energía</div>
+          </div>
+          <div class="speaker-item">
+            <div class="speaker-name">[Por confirmar]</div>
+            <div class="speaker-role">Agencia de competencia</div>
+          </div>
+          <div class="speaker-item">
+            <div class="speaker-name">[Por confirmar]</div>
+            <div class="speaker-role">Operador de infraestructura pública</div>
+          </div>
+
           <div class="panel-badge">Sesión especial</div>
-          <div class="speaker-item"><div class="speaker-name">[Por confirmar]</div><div class="speaker-role">Perspectiva de usuarios y sociedad civil</div></div>
+          <div class="speaker-item">
+            <div class="speaker-name">[Por confirmar]</div>
+            <div class="speaker-role">Perspectiva de usuarios y sociedad civil</div>
+          </div>
         </div>
       </div>
     </div>
@@ -255,6 +886,7 @@
   <!-- COMMITTEES -->
   <div class="tab-content" id="tab-committees">
     <h2 class="section-title">Comités</h2>
+
     <div class="committee-section">
       <h3>Comité Científico y de Selección</h3>
       <div class="members-grid">
@@ -268,14 +900,16 @@
         <div class="member-card"><div class="member-name">[Por confirmar]</div><div class="member-inst">[Institución], contratación pública</div></div>
       </div>
     </div>
+
     <div class="committee-section">
       <h3>Comité Ejecutivo</h3>
       <div class="members-grid">
-        <div class="member-card"><div class="member-name">[Por confirmar]</div><div class="member-inst">Presidencia — Máster ERCSP, Universitat de Barcelona</div></div>
-        <div class="member-card"><div class="member-name">[Por confirmar]</div><div class="member-inst">Máster ERCSP, Universitat de Barcelona</div></div>
-        <div class="member-card"><div class="member-name">[Por confirmar]</div><div class="member-inst">[Institución organizadora Lima]</div></div>
+        <div class="member-card"><div class="member-name">[Por confirmar]</div><div class="member-inst">Presidencia — [Institución organizadora]</div></div>
+        <div class="member-card"><div class="member-name">[Por confirmar]</div><div class="member-inst">[Institución organizadora]</div></div>
+        <div class="member-card"><div class="member-name">[Por confirmar]</div><div class="member-inst">[Institución organizadora]</div></div>
       </div>
     </div>
+
     <div class="committee-section">
       <h3>Comité Local Organizador — Lima</h3>
       <div class="members-grid">
@@ -286,24 +920,64 @@
     </div>
   </div>
 
-  <!-- CALL -->
+  <!-- CALL FOR EXPERIENCES -->
   <div class="tab-content" id="tab-call">
     <h2 class="section-title">Convocatoria de experiencias</h2>
-    <p class="lead-text">Las Jornadas invitan a profesionales en activo a presentar experiencias reales de mejora en la gestión, regulación y política de competencia en servicios esenciales. No se trata de una convocatoria de artículos académicos, sino de un espacio para compartir <strong>casos prácticos, lecciones aprendidas y resultados verificables</strong>.</p>
-    <p class="lead-text">Se aceptan experiencias en cualquiera de los sectores siguientes, con especial interés en los países de América Latina y el Caribe, aunque se recibirán experiencias de cualquier región del mundo.</p>
+
+    <p class="lead-text">
+      Las Jornadas invitan a profesionales en activo a presentar experiencias reales de mejora en la gestión, regulación y política de competencia en servicios esenciales. No se trata de una convocatoria de artículos académicos, sino de un espacio para compartir <strong>casos prácticos, lecciones aprendidas y resultados verificables</strong>.
+    </p>
+
+    <p class="lead-text">
+      Se aceptan experiencias en cualquiera de los sectores siguientes, con especial interés en los países de América Latina y el Caribe, aunque se recibirán experiencias de cualquier región del mundo.
+    </p>
+
     <h3 style="font-family:'Playfair Display',serif; font-size:1.15rem; margin-bottom:20px; color:var(--ink);">Ámbitos temáticos</h3>
+
     <div class="topics-grid">
-      <div class="topic-card"><h4>Mejoras en la prestación de servicios</h4><p>Reformas organizativas, digitalización, mejora de coberturas, eficiencia operativa y calidad del servicio al ciudadano.</p></div>
-      <div class="topic-card"><h4>Diseño y reforma regulatoria</h4><p>Nuevos marcos de regulación por incentivos, regulación de la calidad, fijación de tarifas y acceso a infraestructuras.</p></div>
-      <div class="topic-card"><h4>Política de competencia</h4><p>Aplicación del derecho de la competencia en mercados de servicios esenciales, control de concentraciones y abuso de posición dominante.</p></div>
-      <div class="topic-card"><h4>Concesiones y contratos públicos</h4><p>Diseño de licitaciones, renegociación de contratos, control de la ejecución y evaluación de resultados en concesiones de infraestructura.</p></div>
-      <div class="topic-card"><h4>Participación ciudadana y gobernanza</h4><p>Mecanismos de consulta, transparencia regulatoria, defensa del consumidor y rendición de cuentas de los reguladores.</p></div>
-      <div class="topic-card"><h4>Transición energética y sostenibilidad</h4><p>Regulación de energías renovables, acceso universal a la electricidad y políticas de descarbonización de servicios públicos.</p></div>
+      <div class="topic-card">
+        <h4>Mejoras en la prestación de servicios</h4>
+        <p>Reformas organizativas, digitalización, mejora de coberturas, eficiencia operativa y calidad del servicio al ciudadano.</p>
+      </div>
+      <div class="topic-card">
+        <h4>Diseño y reforma regulatoria</h4>
+        <p>Nuevos marcos de regulación por incentivos, regulación de la calidad, fijación de tarifas y acceso a infraestructuras.</p>
+      </div>
+      <div class="topic-card">
+        <h4>Política de competencia</h4>
+        <p>Aplicación del derecho de la competencia en mercados de servicios esenciales, control de concentraciones y abuso de posición dominante.</p>
+      </div>
+      <div class="topic-card">
+        <h4>Concesiones y contratos públicos</h4>
+        <p>Diseño de licitaciones, renegociación de contratos, control de la ejecución y evaluación de resultados en concesiones de infraestructura.</p>
+      </div>
+      <div class="topic-card">
+        <h4>Participación ciudadana y gobernanza</h4>
+        <p>Mecanismos de consulta, transparencia regulatoria, defensa del consumidor y rendición de cuentas de los reguladores.</p>
+      </div>
+      <div class="topic-card">
+        <h4>Transición energética y sostenibilidad</h4>
+        <p>Regulación de energías renovables, acceso universal a la electricidad y políticas de descarbonización de servicios públicos.</p>
+      </div>
     </div>
-    <div class="notice"><strong>Formato de presentación:</strong> Els presentadors disposaran de 20 minuts per exposar la seva experiència, seguits de 10 minuts de debat. Es valorarà especialment la presentació de dades i resultats verificables. No cal presentar un article acadèmic; n'hi ha prou amb un resum executiu de 3–5 pàgines.</div>
-    <p class="lead-text">El termini per enviar el resum executiu és el <strong>30 d'abril de 2027</strong>. Les notificacions d'acceptació o rebuig s'emetran abans del 31 de maig de 2027.</p>
+
+    <div class="notice">
+      <strong>Formato de presentación:</strong> Los presentadores dispondrán de 20 minutos para exponer su experiencia, seguidos de 10 minutos de debate. Se valorará especialmente la presentación de datos y resultados verificables. No es necesario presentar un artículo académico; basta con un resumen ejecutivo de 3–5 páginas.
+    </div>
+
+    <p class="lead-text">
+      El plazo para enviar el resumen ejecutivo es el <strong>30 de abril de 2027</strong>. Las solicitudes deben enviarse a través del formulario en línea disponible en esta página. Las notificaciones de aceptación o rechazo se emitirán antes del 31 de mayo de 2027.
+    </p>
+
+    <p style="font-size:0.88rem; color:var(--ink-soft); margin-bottom:32px;">
+      <strong>Requisito de los presentadores:</strong> Los autores de experiencias aceptadas deberán inscribirse antes del 25 de junio de 2027 para que su presentación aparezca en el programa definitivo. Los presentadores asumirán la función de comentarista en al menos una sesión paralela.
+    </p>
+
     <div class="submit-box">
-      <div><h3>Envía tu resumen ejecutivo</h3><p>Plazo: 30 de abril de 2027 · Resumen de 3–5 páginas en español, inglés o portugués</p></div>
+      <div>
+        <h3>Envía tu resumen ejecutivo</h3>
+        <p>Plazo: 30 de abril de 2027 · Resumen de 3–5 páginas en español, inglés o portugués</p>
+      </div>
       <a href="#" class="btn-gold" onclick="showTab('contact'); return false;">Enviar resumen</a>
     </div>
   </div>
@@ -311,49 +985,175 @@
   <!-- PROGRAMME -->
   <div class="tab-content" id="tab-programme">
     <h2 class="section-title">Programa</h2>
+
     <div class="notice">El programa detallado estará disponible en junio de 2027. A continuación se presenta el esquema provisional.</div>
+
     <div class="programme-day">
       <div class="day-header">Día 1 — Miércoles, 15 de julio de 2027</div>
       <table class="schedule-table">
-        <tr class="session-break"><td>08:30 – 09:15</td><td>Acreditación y bienvenida</td></tr>
-        <tr class="session-highlight"><td>09:15 – 09:30</td><td><div class="session-title">Discurso de apertura</div><div class="session-detail">Autoridades de la institución anfitriona y organizadores</div></td></tr>
-        <tr class="session-highlight"><td>09:30 – 10:30</td><td><div class="session-title">Conferencia magistral</div><div class="session-detail">«Regulación de servicios esenciales en América Latina: retos y oportunidades» — [Ponente por confirmar]</div></td></tr>
-        <tr class="session-break"><td>10:30 – 11:00</td><td>Pausa café y networking</td></tr>
-        <tr><td>11:00 – 13:00</td><td><div class="session-title">Sesiones paralelas 1</div><div class="session-detail">Bloque A: Energía y transición energética · Bloque B: Agua y saneamiento · Bloque C: Política de competencia</div></td></tr>
-        <tr class="session-break"><td>13:00 – 14:30</td><td>Almuerzo</td></tr>
-        <tr><td>14:30 – 16:30</td><td><div class="session-title">Sesiones paralelas 2</div><div class="session-detail">Bloque A: Telecomunicaciones · Bloque B: Concesiones y contratos · Bloque C: Salud y servicios sociales</div></td></tr>
-        <tr class="session-break"><td>16:30 – 17:00</td><td>Pausa café</td></tr>
-        <tr class="session-highlight"><td>17:00 – 18:30</td><td><div class="session-title">Mesa redonda plenaria — Regulación en América Latina: Experiencias comparadas</div><div class="session-detail">Energía · Agua · Telecomunicaciones — Moderador/a: [Por confirmar]</div></td></tr>
-        <tr class="session-break"><td>20:00 – 22:30</td><td>Cena de gala de la conferencia</td></tr>
+        <tr class="session-break">
+          <td>08:30 – 09:15</td>
+          <td>Acreditación y bienvenida a los participantes</td>
+        </tr>
+        <tr class="session-highlight">
+          <td>09:15 – 09:30</td>
+          <td>
+            <div class="session-title">Discurso de apertura</div>
+            <div class="session-detail">Autoridades de la institución anfitriona y organizadores</div>
+          </td>
+        </tr>
+        <tr class="session-highlight">
+          <td>09:30 – 10:30</td>
+          <td>
+            <div class="session-title">Conferencia magistral</div>
+            <div class="session-detail">«Regulación de servicios esenciales en América Latina: retos y oportunidades» — [Ponente invitado/a por confirmar]</div>
+          </td>
+        </tr>
+        <tr class="session-break">
+          <td>10:30 – 11:00</td>
+          <td>Pausa café y networking</td>
+        </tr>
+        <tr>
+          <td>11:00 – 13:00</td>
+          <td>
+            <div class="session-title">Sesiones paralelas 1</div>
+            <div class="session-detail">
+              Bloque A: Energía y transición energética<br>
+              Bloque B: Agua y saneamiento<br>
+              Bloque C: Política de competencia en servicios esenciales
+            </div>
+          </td>
+        </tr>
+        <tr class="session-break">
+          <td>13:00 – 14:30</td>
+          <td>Almuerzo</td>
+        </tr>
+        <tr>
+          <td>14:30 – 16:30</td>
+          <td>
+            <div class="session-title">Sesiones paralelas 2</div>
+            <div class="session-detail">
+              Bloque A: Telecomunicaciones y banda ancha<br>
+              Bloque B: Concesiones y contratos públicos<br>
+              Bloque C: Salud y servicios sociales
+            </div>
+          </td>
+        </tr>
+        <tr class="session-break">
+          <td>16:30 – 17:00</td>
+          <td>Pausa café</td>
+        </tr>
+        <tr class="session-highlight">
+          <td>17:00 – 18:30</td>
+          <td>
+            <div class="session-title">Mesa redonda plenaria — Regulación en América Latina: Experiencias comparadas</div>
+            <div class="session-detail">
+              Energía: [Por confirmar] · Agua: [Por confirmar] · Telecomunicaciones: [Por confirmar]<br>
+              Moderador/a: [Por confirmar]
+            </div>
+          </td>
+        </tr>
+        <tr class="session-break">
+          <td>20:00 – 22:30</td>
+          <td>Cena de gala de la conferencia</td>
+        </tr>
       </table>
     </div>
+
     <div class="programme-day">
       <div class="day-header">Día 2 — Jueves, 16 de julio de 2027</div>
       <table class="schedule-table">
-        <tr><td>09:00 – 11:00</td><td><div class="session-title">Sesiones paralelas 3</div><div class="session-detail">Bloque A: Transporte y movilidad · Bloque B: Gobernanza regulatoria · Bloque C: Digitalización de servicios públicos</div></td></tr>
-        <tr class="session-break"><td>11:00 – 11:30</td><td>Pausa café</td></tr>
-        <tr><td>11:30 – 13:00</td><td><div class="session-title">Sesiones paralelas 4</div><div class="session-detail">Bloque A: Regulación tarifaria · Bloque B: Evaluación de resultados · Bloque C: Reforma regulatoria comparada</div></td></tr>
-        <tr class="session-break"><td>13:00 – 14:30</td><td>Almuerzo</td></tr>
-        <tr><td>14:30 – 16:30</td><td><div class="session-title">Sesiones paralelas 5</div><div class="session-detail">Bloque A: Energías renovables · Bloque B: Defensa del consumidor · Bloque C: Renegociación de contratos</div></td></tr>
-        <tr class="session-break"><td>16:30 – 17:00</td><td>Pausa café</td></tr>
-        <tr class="session-highlight"><td>17:00 – 18:30</td><td><div class="session-title">Sesión de clausura — Entrega del Premio a la Mejor Experiencia</div><div class="session-detail">Panelistas invitados: [Por confirmar]</div></td></tr>
-        <tr class="session-break"><td>18:30 – 20:00</td><td>Cóctel de despedida</td></tr>
+        <tr>
+          <td>09:00 – 11:00</td>
+          <td>
+            <div class="session-title">Sesiones paralelas 3</div>
+            <div class="session-detail">
+              Bloque A: Transporte y movilidad urbana<br>
+              Bloque B: Gobernanza regulatoria y participación ciudadana<br>
+              Bloque C: Digitalización de servicios públicos
+            </div>
+          </td>
+        </tr>
+        <tr class="session-break">
+          <td>11:00 – 11:30</td>
+          <td>Pausa café</td>
+        </tr>
+        <tr>
+          <td>11:30 – 13:00</td>
+          <td>
+            <div class="session-title">Sesiones paralelas 4</div>
+            <div class="session-detail">
+              Bloque A: Regulación tarifaria y acceso universal<br>
+              Bloque B: Control ex-post y evaluación de resultados<br>
+              Bloque C: Experiencias de reforma regulatoria comparada
+            </div>
+          </td>
+        </tr>
+        <tr class="session-break">
+          <td>13:00 – 14:30</td>
+          <td>Almuerzo</td>
+        </tr>
+        <tr>
+          <td>14:30 – 16:30</td>
+          <td>
+            <div class="session-title">Sesiones paralelas 5</div>
+            <div class="session-detail">
+              Bloque A: Energías renovables y regulación<br>
+              Bloque B: Defensa del consumidor en servicios esenciales<br>
+              Bloque C: Renegociación de contratos y garantías de inversión
+            </div>
+          </td>
+        </tr>
+        <tr class="session-break">
+          <td>16:30 – 17:00</td>
+          <td>Pausa café</td>
+        </tr>
+        <tr class="session-highlight">
+          <td>17:00 – 18:30</td>
+          <td>
+            <div class="session-title">Sesión de clausura — Fronteras de la regulación de servicios esenciales</div>
+            <div class="session-detail">
+              Panelistas invitados: [Por confirmar]<br>
+              Entrega del Premio a la Mejor Experiencia
+            </div>
+          </td>
+        </tr>
+        <tr class="session-break">
+          <td>18:30 – 20:00</td>
+          <td>Cóctel de despedida</td>
+        </tr>
       </table>
     </div>
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:16px;">
+      La conexión WiFi estará disponible en la sede. Se facilitarán las credenciales en la mesa de acreditación.
+    </p>
   </div>
 
   <!-- REGISTRATION -->
   <div class="tab-content" id="tab-registration">
     <h2 class="section-title">Inscripción</h2>
-    <p class="lead-text">Las experiencias aceptadas se incluyen en el programa definitivo únicamente si el presentador se inscribe dentro de los plazos establecidos.</p>
-    <ul style="margin: 0 0 32px 20px; line-height: 2.4; font-size: 0.95rem; color: var(--ink-mid);">
-      <li><strong>25 de junio de 2027</strong> — Plazo para presentadores</li>
+
+    <p class="lead-text">Las experiencias aceptadas se incluyen en el programa definitivo únicamente si el presentador se inscribe dentro de los plazos establecidos:</p>
+
+    <ul style="margin: 0 0 32px 20px; line-height: 2.2; font-size: 0.95rem; color: var(--ink-mid);">
+      <li><strong>25 de junio de 2027</strong> — Plazo para presentadores (inscripción temprana y tardía)</li>
       <li><strong>5 de julio de 2027</strong> — Plazo para otros participantes</li>
     </ul>
-    <a href="#" class="btn-gold" style="margin-bottom:40px; display:inline-block;">Inscribirse en línea</a>
-    <h3 style="font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:16px; color:var(--ink);">Cuotas de inscripción (USD, orientativo)</h3>
+
+    <a href="#" class="btn-gold" style="margin-bottom: 40px; display: inline-block;">Inscribirse en línea</a>
+
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:16px; color:var(--ink);">Cuotas de inscripción</h3>
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-bottom:16px;">La cuota incluye acceso a todas las sesiones, pausas café, almuerzo ambos días, recepción y cena de gala. Precios en USD (orientativos, sujetos a confirmación).</p>
+
     <table class="fees-table">
-      <thead><tr><th>Categoría</th><th>Importe</th></tr></thead>
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th>Importe</th>
+        </tr>
+      </thead>
       <tbody>
         <tr class="section-row"><td colspan="2">Inscripción temprana (hasta 15 jun. 2027)</td></tr>
         <tr><td>Presentadores — tarifa estándar</td><td><span class="price">250 USD</span></td></tr>
@@ -367,64 +1167,177 @@
         <tr><td>Acompañantes (cena de gala)</td><td><span class="price">80 USD</span></td></tr>
       </tbody>
     </table>
-    <div class="notice"><strong>Política de cancelación:</strong> Les quotes d'inscripció no són reemborsables. En cas de cancel·lació abans del 1 de juliol de 2027 es podrà transferir la inscripció a un altre participant.</div>
+
+    <div class="notice">
+      <strong>Política de cancelación:</strong> Las cuotas de inscripción no son reembolsables. En caso de cancelación antes del 1 de julio de 2027 se podrá transferir la inscripción a otro participante.<br><br>
+      <strong>Restricciones alimentarias:</strong> Si tiene alguna restricción alimentaria, indíquelo en el formulario de inscripción.
+    </div>
   </div>
 
   <!-- ACCOMMODATION -->
   <div class="tab-content" id="tab-accommodation">
     <h2 class="section-title">Alojamiento</h2>
-    <p class="lead-text">Los participantes son responsables de gestionar su propio alojamiento. Lima ofrece una amplia oferta hotelera. Recomendamos reservar con antelación, ya que julio es temporada alta de turismo nacional.</p>
+
+    <p class="lead-text">Los participantes son responsables de gestionar su propio alojamiento. Lima ofrece una amplia oferta hotelera en todos los rangos de precio. Recomendamos reservar con antelación, ya que julio es temporada alta de turismo nacional.</p>
+
+    <div class="notice">Los hoteles listados a continuación se encuentran en los distritos de Miraflores, San Isidro y el Centro de Lima, todos bien comunicados con la sede de la conferencia.</div>
+
     <div class="info-columns">
-      <div class="info-block"><h4>Hoteles — categoría superior</h4><ul><li>JW Marriott Lima (Miraflores) — desde ~220 USD/noche</li><li>Belmond Miraflores Park — desde ~280 USD/noche</li><li>Westin Lima (San Isidro) — desde ~200 USD/noche</li><li>Casa Andina Premium Miraflores — desde ~160 USD/noche</li></ul></div>
-      <div class="info-block"><h4>Hoteles — categoría media</h4><ul><li>Radisson Red Lima — desde ~110 USD/noche</li><li>Hotel Estelar Miraflores — desde ~100 USD/noche</li><li>Sonesta El Olivar (San Isidro) — desde ~120 USD/noche</li><li>Ibis Lima Larco (Miraflores) — desde ~70 USD/noche</li></ul></div>
+      <div class="info-block">
+        <h4>Hoteles recomendados — categoría superior</h4>
+        <ul>
+          <li>JW Marriott Lima (Miraflores) — desde ~220 USD/noche</li>
+          <li>Belmond Miraflores Park — desde ~280 USD/noche</li>
+          <li>Westin Lima Hotel (San Isidro) — desde ~200 USD/noche</li>
+          <li>Casa Andina Premium Miraflores — desde ~160 USD/noche</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4>Hoteles recomendados — categoría media</h4>
+        <ul>
+          <li>Radisson Red Lima — desde ~110 USD/noche</li>
+          <li>Hotel Estelar Miraflores — desde ~100 USD/noche</li>
+          <li>Sonesta Hotel El Olivar (San Isidro) — desde ~120 USD/noche</li>
+          <li>Ibis Lima Larco (Miraflores) — desde ~70 USD/noche</li>
+        </ul>
+      </div>
     </div>
+
+    <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:24px; line-height:1.7;">
+      Los precios indicados son orientativos. Se recomienda comparar tarifas en plataformas como Booking.com o en los sitios web de los hoteles. Los organizadores gestionarán tarifas especiales para los participantes con los hoteles de categoría superior; se informará de los códigos de descuento una vez confirmada la sede definitiva.
+    </p>
   </div>
 
   <!-- LIMA -->
   <div class="tab-content" id="tab-lima">
     <h2 class="section-title">Lima</h2>
-    <p class="lead-text">Lima, capital del Perú, és una metròpolis de més de 10 milions d'habitants, seu d'importants organismes reguladors de referència regional i una ciutat amb una gastronomia reconeguda mundialment.</p>
+
+    <p class="lead-text">Lima, capital del Perú, es una metrópolis de más de 10 millones de habitantes, sede de importantes organismos reguladores de referencia regional y una ciudad con una gastronomía reconocida mundialmente. Su ubicación en la costa del Pacífico la convierte en un hub de conectividad aérea para toda América Latina.</p>
+
     <div class="info-columns">
-      <div class="info-block"><h4>Cómo llegar</h4><ul><li>Aeropuerto Jorge Chávez (LIM), en Callao</li><li>Taxi al centro / Miraflores: 40–60 min, ~25–35 USD</li><li>Apps de transporte: Uber, InDrive</li><li>Vuelos directos desde Madrid, Miami, Bogotá, Santiago, São Paulo</li></ul></div>
-      <div class="info-block"><h4>Transporte local</h4><ul><li>Metropolitano (BRT): línea rápida norte-sur</li><li>Taxi / app: Uber, Cabify, Beat</li><li>Tarifa media taxi: 5–15 USD por trayecto</li><li>Julio: clima seco, 15–18 °C en la costa</li></ul></div>
+      <div class="info-block">
+        <h4>Cómo llegar a Lima</h4>
+        <ul>
+          <li>Aeropuerto Internacional Jorge Chávez (LIM), en Callao</li>
+          <li>Taxi al centro / Miraflores: 40–60 min, ~25–35 USD</li>
+          <li>Servicio de shuttle de los hoteles principales</li>
+          <li>Aplicaciones de transporte: Uber, InDrive</li>
+          <li>Vuelos directos desde Madrid, Miami, Bogotá, Santiago y São Paulo</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4>Transporte local</h4>
+        <ul>
+          <li>Metropolitano (BRT): línea rápida norte-sur</li>
+          <li>Taxi formal o app (Uber, Cabify, Beat)</li>
+          <li>Tarifa media en taxi: 5–15 USD por trayecto urbano</li>
+          <li>Julio: clima seco y templado, 15–18 °C en costa</li>
+          <li>Se recomienda ropa de abrigo ligero para las noches</li>
+        </ul>
+      </div>
     </div>
-    <div class="info-columns" style="margin-top:24px;">
-      <div class="info-block"><h4>Turismo y cultura</h4><ul><li>Larco Museum (arte precolombino)</li><li>Centro Histórico (Patrimonio UNESCO)</li><li>Miraflores y el Malecón del Pacífico</li><li>Mercado de Surquillo y gastronomía local</li><li>Pachacámac (excursión de día)</li></ul></div>
-      <div class="info-block"><h4>Información práctica</h4><ul><li>Divisa: Sol peruano (PEN) · 1 USD ≈ 3,7 PEN</li><li>Zona horaria: UTC−5</li><li>Idioma: Español</li><li>Visado: consultar con la embajada</li></ul></div>
+
+    <div class="info-columns" style="margin-top: 24px;">
+      <div class="info-block">
+        <h4>Turismo y cultura</h4>
+        <ul>
+          <li>Larco Museum (arte precolombino)</li>
+          <li>Centro Histórico de Lima (Patrimonio UNESCO)</li>
+          <li>Miraflores y el Malecón del Pacífico</li>
+          <li>Mercado de Surquillo y gastronomía local</li>
+          <li>Excursión de día: sitio arqueológico de Pachacámac</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4>Información práctica</h4>
+        <ul>
+          <li>Divisa: Sol peruano (PEN) · 1 USD ≈ 3,7 PEN</li>
+          <li>Zona horaria: UTC−5 (hora de Lima)</li>
+          <li>Idioma: Español; inglés habitual en zonas turísticas</li>
+          <li>Visado: consultar con la embajada según nacionalidad</li>
+          <li>Vacunas: no obligatorias para Lima; consultar médico</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <!-- VENUE -->
   <div class="tab-content" id="tab-venue">
     <h2 class="section-title">Sede de la conferencia</h2>
-    <p class="lead-text">La conferencia se celebrará en <strong>[Nombre de la sede — por confirmar]</strong>, en el distrito de <strong>[Miraflores / San Isidro — por confirmar]</strong>, Lima, Perú.</p>
-    <div class="venue-map">[Mapa de ubicación — insertar Google Maps embed aquí]</div>
+
+    <p class="lead-text">La conferencia se celebrará en <strong>[Nombre de la sede — por confirmar]</strong>, en el distrito de <strong>[Miraflores / San Isidro / Centro de Lima — por confirmar]</strong>, Lima, Perú.</p>
+
+    <p class="lead-text">La sede cuenta con salas plenarias, salas paralelas equipadas con medios audiovisuales, servicio de catering y conexión WiFi. La ubicación es accesible en taxi o transporte público desde los principales hoteles de la ciudad.</p>
+
+    <div class="venue-map">
+      [Mapa de ubicación — insertar Google Maps embed aquí]
+    </div>
+
     <div class="info-columns">
-      <div class="info-block"><h4>Acceso a la sede</h4><ul><li>Taxi desde Miraflores: ~15 min / ~10 USD</li><li>Metropolitano + caminata: ~25 min</li><li>Estacionamiento disponible</li><li>Acreditación abre a las 08:30 h (día 1)</li></ul></div>
-      <div class="info-block"><h4>Cena de gala</h4><ul><li>[Restaurante por confirmar]</li><li>20:00 h del 15 de julio de 2027</li><li>Incluida en la cuota de inscripción</li><li>Se requiere acreditación para el acceso</li></ul></div>
+      <div class="info-block">
+        <h4>Acceso a la sede</h4>
+        <ul>
+          <li>Taxi desde Miraflores: ~15 min / ~10 USD</li>
+          <li>Metropolitano + caminata: ~25 min</li>
+          <li>Estacionamiento disponible en el edificio</li>
+          <li>Acreditación abre a las 08:30 h (día 1)</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4>Cena de gala</h4>
+        <ul>
+          <li>[Restaurante por confirmar]</li>
+          <li>20:00 h del 15 de julio de 2027</li>
+          <li>Incluida en la cuota de inscripción</li>
+          <li>Se requiere acreditación para el acceso</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <!-- PRIZE -->
   <div class="tab-content" id="tab-prize">
     <h2 class="section-title">Premio a la Mejor Experiencia</h2>
+
     <div class="prize-box">
       <h3 style="font-family:'Playfair Display',serif; font-size:1.4rem; margin-bottom:16px; color:var(--ink);">Premio a la Mejor Experiencia Profesional</h3>
-      <p style="font-size:0.95rem; line-height:1.8; color:var(--ink-mid); margin-bottom:20px;">El Comité Científico otorgará el <strong>Premio a la Mejor Experiencia Profesional</strong> a la presentación que represente el ejemplo más destacado de mejora verificable en la prestación de servicios públicos o en la política de regulación y competencia. El premio se entregará durante la sesión de clausura del 16 de julio de 2027.</p>
-      <p style="font-size:0.95rem; line-height:1.8; color:var(--ink-mid); margin-bottom:20px;">Es valoraran especialment els criteris d'<strong>impacte mesurable</strong>, <strong>innovació</strong>, <strong>replicabilitat</strong> i <strong>solidesa metodològica</strong> en l'avaluació dels resultats.</p>
-      <p style="font-size:0.9rem; color:var(--gold-dark); font-weight:500;">Dotación económica: [Por confirmar] · Financiado por [Patrocinador — por confirmar]</p>
+      <p style="font-size:0.95rem; line-height:1.8; color:var(--ink-mid); margin-bottom:20px;">
+        El Comité Científico otorgará el <strong>Premio a la Mejor Experiencia Profesional</strong> a la presentación que, a juicio del Comité, represente el ejemplo más destacado de mejora verificable en la prestación de servicios públicos o en la política de regulación y competencia. El premio se entregará durante la sesión de clausura del 16 de julio de 2027.
+      </p>
+      <p style="font-size:0.95rem; line-height:1.8; color:var(--ink-mid); margin-bottom:20px;">
+        Se valorarán especialmente los criterios de: <strong>impacto medible</strong> en los ciudadanos o usuarios, <strong>innovación</strong> en el diseño de la intervención, <strong>replicabilidad</strong> en otros contextos y <strong>solidez metodológica</strong> en la evaluación de resultados.
+      </p>
+      <p style="font-size:0.9rem; color: var(--gold-dark); font-weight: 500;">
+        Dotación económica: [Por confirmar] · Financiado por [Patrocinador/institución — por confirmar]
+      </p>
     </div>
+
+    <p style="font-size:0.88rem; color:var(--ink-soft); line-height:1.7;">
+      Para optar al premio, los presentadores deben indicarlo en el formulario de inscripción. El Comité Científico realizará la valoración sobre la base del resumen ejecutivo enviado, la presentación oral y los datos y evidencias aportados durante la sesión.
+    </p>
   </div>
 
   <!-- CONTACT -->
   <div class="tab-content" id="tab-contact">
     <h2 class="section-title">Contacto</h2>
-    <p class="lead-text">Para cualquier consulta sobre la conferencia, diríjase a los organizadores a través del formulario siguiente o al correo <a href="mailto:jornadas2027@ub.edu" style="color:var(--gold-dark);">jornadas2027@ub.edu</a></p>
+
+    <p class="lead-text">Para cualquier consulta sobre la conferencia, diríjase a los organizadores locales a través del formulario siguiente o del correo electrónico <a href="mailto:jornadas2027@[dominio].org" style="color:var(--gold-dark);">jornadas2027@[dominio].org</a></p>
+
     <div class="contact-form">
-      <div class="form-group"><label>Nombre completo</label><input type="text" placeholder="Su nombre"></div>
-      <div class="form-group"><label>Correo electrónico</label><input type="email" placeholder="su@email.com"></div>
-      <div class="form-group"><label>Institución</label><input type="text" placeholder="Organismo / Empresa / Universidad"></div>
-      <div class="form-group"><label>Asunto</label>
+      <div class="form-group">
+        <label>Nombre completo</label>
+        <input type="text" placeholder="Su nombre">
+      </div>
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="su@email.com">
+      </div>
+      <div class="form-group">
+        <label>Institución</label>
+        <input type="text" placeholder="Organismo / Empresa / Universidad">
+      </div>
+      <div class="form-group">
+        <label>Asunto</label>
         <select>
           <option>Consulta general</option>
           <option>Envío de resumen ejecutivo</option>
@@ -434,88 +1347,69 @@
           <option>Otro</option>
         </select>
       </div>
-      <div class="form-group"><label>Mensaje</label><textarea placeholder="Escriba su consulta aquí…"></textarea></div>
-      <button class="btn-gold" onclick="alert('Formulario pendent d\\'integració.')">Enviar mensaje</button>
+      <div class="form-group">
+        <label>Mensaje</label>
+        <textarea placeholder="Escriba su consulta aquí…"></textarea>
+      </div>
+      <button class="btn-gold" onclick="alert('Formulario pendiente de integración con el backend.')">Enviar mensaje</button>
     </div>
   </div>
 
-</div>
+</div><!-- /tabs-wrapper -->
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-brand">I Jornadas Internacionales · Servicios Públicos, Regulación y Competencia</div>
-      <p class="footer-desc">Lima, Perú · 15–16 de julio de 2027<br>Organizado por el Máster ERCSP · Universitat de Barcelona</p>
+      <div class="footer-brand">I Jornadas Internacionales sobre Servicios Públicos, Regulación y Competencia</div>
+      <p class="footer-desc">Lima, Perú · 15–16 de julio de 2027<br>Un foro profesional para compartir experiencias de mejora en la prestación y regulación de servicios esenciales.</p>
     </div>
     <div class="footer-col">
       <h4>Navegación</h4>
       <ul>
-        <li><a onclick="showTab('call')">Convocatoria</a></li>
-        <li><a onclick="showTab('programme')">Programa</a></li>
-        <li><a onclick="showTab('registration')">Inscripción</a></li>
-        <li><a onclick="showTab('committees')">Comités</a></li>
-        <li><a onclick="showTab('contact')">Contacto</a></li>
+        <li><a href="#" onclick="showTab('call')">Convocatoria</a></li>
+        <li><a href="#" onclick="showTab('programme')">Programa</a></li>
+        <li><a href="#" onclick="showTab('registration')">Inscripción</a></li>
+        <li><a href="#" onclick="showTab('committees')">Comités</a></li>
+        <li><a href="#" onclick="showTab('contact')">Contacto</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Información</h4>
       <ul>
-        <li><a onclick="showTab('accommodation')">Alojamiento</a></li>
-        <li><a onclick="showTab('lima')">Lima</a></li>
-        <li><a onclick="showTab('venue')">Sede</a></li>
-        <li><a onclick="showTab('prize')">Premio</a></li>
+        <li><a href="#" onclick="showTab('accommodation')">Alojamiento</a></li>
+        <li><a href="#" onclick="showTab('lima')">Lima</a></li>
+        <li><a href="#" onclick="showTab('venue')">Sede</a></li>
+        <li><a href="#" onclick="showTab('prize')">Premio</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2027 Jornadas Internacionales sobre Servicios Públicos y Regulación · Máster ERCSP · Universitat de Barcelona</span>
-    <span>jornadas2027@ub.edu</span>
+    <span>© 2027 Jornadas Internacionales sobre Servicios Públicos y Regulación</span>
+    <span>jornadas2027@[dominio].org</span>
   </div>
 </footer>
 
 <script>
 function showTab(id) {
-  document.querySelectorAll('.tab-content').forEach(function(t){ t.classList.remove('active'); });
-  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
-  var content = document.getElementById('tab-' + id);
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+  const content = document.getElementById('tab-' + id);
   if (content) content.classList.add('active');
-  var map = {home:0,committees:1,call:2,programme:3,registration:4,accommodation:5,lima:6,venue:7,prize:8,contact:9};
-  var btns = document.querySelectorAll('.tab-btn');
-  if (map[id] !== undefined && btns[map[id]]) btns[map[id]].classList.add('active');
-  window.scrollTo({top:0, behavior:'smooth'});
-  if (window.parent && window.parent !== window) {
-    window.parent.postMessage({type:'conf-scroll-top'}, '*');
+
+  const buttons = document.querySelectorAll('.tab-btn');
+  const tabMap = {
+    home: 0, committees: 1, call: 2, programme: 3,
+    registration: 4, accommodation: 5, lima: 6,
+    venue: 7, prize: 8, contact: 9
+  };
+  if (tabMap[id] !== undefined && buttons[tabMap[id]]) {
+    buttons[tabMap[id]].classList.add('active');
   }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-</script>
-</body>
-</html>`;
-
-  var iframe = document.getElementById('conf-iframe');
-  var doc = iframe.contentDocument || iframe.contentWindow.document;
-  doc.open();
-  doc.write(content);
-  doc.close();
-
-  // Ajusta l'alçada de l'iframe al contingut real
-  function resizeIframe() {
-    try {
-      var h = doc.documentElement.scrollHeight || doc.body.scrollHeight;
-      iframe.style.height = (h + 20) + 'px';
-    } catch(e) {}
-  }
-
-  iframe.onload = resizeIframe;
-  setTimeout(resizeIframe, 800);
-  setTimeout(resizeIframe, 2000);
-
-  // Escolta canvis de pestanya per redimensionar
-  window.addEventListener('message', function(e) {
-    if (e.data && e.data.type === 'conf-scroll-top') {
-      window.scrollTo({top: document.getElementById('conf-iframe-wrapper').offsetTop - 20, behavior: 'smooth'});
-    }
-  });
-})();
 </script>
 
 </body>
