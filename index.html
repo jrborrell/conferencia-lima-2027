@@ -20,6 +20,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+strong { font-weight: 700; }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -30,11 +31,11 @@
 
   /* ── HEADER / NAV ── */
   header {
-    background: var(--ink);
+    background: #1a3a5c;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 2px solid var(--gold);
+    border-bottom: 2px solid rgba(184,150,62,0.5);
   }
 
   nav {
@@ -79,12 +80,12 @@
 
   /* ── HERO ── */
   .hero {
-    background: var(--ink);
-    color: white;
-    padding: 80px 2rem 100px;
-    position: relative;
-    overflow: hidden;
-  }
+  background: #1a3a5c;
+  color: white;
+  padding: 40px 2rem 50px;
+  position: relative;
+  overflow: hidden;
+}
 
   .hero::before {
     content: '';
@@ -128,7 +129,7 @@
 
   .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
     line-height: 1.15;
     font-weight: 600;
     margin-bottom: 16px;
@@ -178,7 +179,7 @@
   .dates-banner {
     background: var(--white);
     border-bottom: 1px solid var(--border);
-    padding: 32px 2rem;
+    padding: 8px 2rem;
   }
 
   .dates-banner h2 {
@@ -188,7 +189,7 @@
     text-transform: uppercase;
     color: var(--ink-soft);
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 6px;
     font-weight: 400;
   }
 
@@ -203,7 +204,7 @@
 
   .date-item {
     background: var(--white);
-    padding: 20px 16px;
+    padding: 6px 16px;
     text-align: center;
   }
 
@@ -647,7 +648,7 @@
 
   /* ── FOOTER ── */
   footer {
-    background: var(--ink);
+    background:  #1a3a5c;
     color: rgba(255,255,255,0.5);
     padding: 48px 2rem 32px;
     margin-top: 80px;
@@ -742,7 +743,7 @@
 <!-- NAV -->
 <header>
   <nav>
-    <a href="#" class="nav-logo">JSP·REG 2027</a>
+    <a href="#" class="nav-logo">JORNADAS 2027</a>
     <ul>
       <li><a href="#" onclick="showTab('home')">Inicio</a></li>
       <li><a href="#" onclick="showTab('committees')">Comités</a></li>
@@ -761,9 +762,9 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-label">I Jornadas Internacionales</div>
-    <h1>Servicios Públicos, <em>Regulación</em> y Competencia en Servicios Esenciales</h1>
-    <p class="hero-sub">Un foro para profesionales y gestores que comparten experiencias de mejora en la prestación de servicios públicos y en las políticas de regulación y competencia.</p>
+    <div class="hero-label">I Jornadas Intercambio de Experiencias</div>
+    <h1>Mejora de las Políticas y de los <em>Servicios Públicos</em></h1>
+    <p class="hero-sub">Un foro para profesionales</p>
     <div class="hero-meta">
       <div class="hero-meta-item">
         <span class="hero-meta-label">Fechas</span>
@@ -775,11 +776,12 @@
       </div>
       <div class="hero-meta-item">
         <span class="hero-meta-label">Modalidad</span>
-        <span class="hero-meta-value">Presencial + online</span>
+        <span class="hero-meta-value">Presencial</span>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- DATES BANNER -->
 <section class="dates-banner">
@@ -807,31 +809,17 @@
     </div>
     <div class="date-item">
       <div class="date-icon">5</div>
-      <div class="date-label">Inscripción de presentadores</div>
+      <div class="date-label">Inscripción tardía (tarifa normal)</div>
       <div class="date-value">25 jun. 2027</div>
     </div>
-    <div class="date-item">
-      <div class="date-icon">6</div>
-      <div class="date-label">Inscripción resto de participantes</div>
-      <div class="date-value">5 jul. 2027</div>
-    </div>
+    
   </div>
 </section>
 
 <!-- MAIN CONTENT / TABS -->
 <div class="tabs-wrapper">
-  <nav class="tabs-nav">
-    <button class="tab-btn active" onclick="showTab('home')">Inicio</button>
-    <button class="tab-btn" onclick="showTab('committees')">Comités</button>
-    <button class="tab-btn" onclick="showTab('call')">Convocatoria</button>
-    <button class="tab-btn" onclick="showTab('programme')">Programa</button>
-    <button class="tab-btn" onclick="showTab('registration')">Inscripción</button>
-    <button class="tab-btn" onclick="showTab('accommodation')">Alojamiento</button>
-    <button class="tab-btn" onclick="showTab('lima')">Lima</button>
-    <button class="tab-btn" onclick="showTab('venue')">Sede</button>
-    <button class="tab-btn" onclick="showTab('prize')">Premio</button>
-    <button class="tab-btn" onclick="showTab('contact')">Contacto</button>
-  </nav>
+
+
 
   <!-- HOME -->
   <div class="tab-content active" id="tab-home">
@@ -839,13 +827,13 @@
       <div>
         <h2 class="section-title">Bienvenida</h2>
         <p class="lead-text">
-          La <strong>[Institución organizadora]</strong> tiene el honor de convocar la <strong>I Jornadas Internacionales sobre Servicios Públicos, Regulación y Competencia en Servicios Esenciales</strong>, que se celebrarán en Lima, Perú, los días 15 y 16 de julio de 2027.
+          La <strong>Asociación para la Mejora de las Políticas y los Servicios Públicos</strong> (promovida por los <em>Graduados en el Máster en Economía, Regulación y Competencia en los Servicios Públicos de la Universidad de Barcelona 2002-2027)</em> convoca las <strong>I Jornadas Internacionales de Intercambio de Experiencias de Mejora en Políticas y los Servicios Públicos,</strong>, que se celebrarán en Lima, Perú, los días 15 y 16 de julio de 2027.
         </p>
         <p class="lead-text">
           A diferencia de los congresos académicos convencionales, estas Jornadas están dirigidas a <strong>profesionales en activo</strong>: directivos y técnicos de organismos reguladores, gestores de servicios públicos, funcionarios de instituciones de competencia, responsables de contratación y concesiones, y consultores de política pública. El eje del encuentro es el intercambio de <em>experiencias reales y resultados verificables</em> de mejora en la prestación de servicios esenciales y en las políticas de regulación y competencia.
         </p>
         <p class="lead-text">
-          Los sectores cubiertos incluyen energía, agua y saneamiento, transporte, telecomunicaciones, salud y servicios sociales.
+          Los sectores preferentes de análisis y evaluación son los de la energía y el medio ambiente, el agua y saneamiento, el transporte y las infraestructuras, las telecomunicaciones y los mercados digitales, y otros servicios esenciales como la salud, la educación o la seguridad.
         </p>
       </div>
 
@@ -1361,8 +1349,8 @@
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-brand">I Jornadas Internacionales sobre Servicios Públicos, Regulación y Competencia</div>
-      <p class="footer-desc">Lima, Perú · 15–16 de julio de 2027<br>Un foro profesional para compartir experiencias de mejora en la prestación y regulación de servicios esenciales.</p>
+      <div class="footer-brand">I Jornadas Internacionales de Intercambio de Experiencias de Mejora en Políticas y los Servicios Públicos</div>
+      <p class="footer-desc">Lima, Perú · 15–16 de julio de 2027<br>Un foro para profesionales</p>
     </div>
     <div class="footer-col">
       <h4>Navegación</h4>
@@ -1385,7 +1373,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2027 Jornadas Internacionales sobre Servicios Públicos y Regulación</span>
+    <span>© 2027 Asociación para la Mejora de las Políticas y los Servicios Públicos promovida por los Graduados en el Máster en Economía, Regulación y Competencia en los Servicios Públicos de la Universidad de Barcelona 2002-2027</span>
     <span>jornadas2027@[dominio].org</span>
   </div>
 </footer>
